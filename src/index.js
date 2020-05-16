@@ -2,12 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { ApolloProvider } from "react-apollo";
+import ApolloClient from "apollo-boost";
 import * as serviceWorker from './serviceWorker';
 
+const client = new ApolloClient({
+  uri: "https://api.8base.com/cka8yia4j000208l7ej2daebn"
+});
+
 ReactDOM.render(
-  <React.StrictMode>
+  <ApolloProvider client={client}>
     <App />
-  </React.StrictMode>,
+  </ApolloProvider>,
   document.getElementById('root')
 );
 
